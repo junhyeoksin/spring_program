@@ -10,6 +10,5 @@
 	<%@ include file="../include/menu.jsp"%>
 	<h2>계산결과</h2>
 	${result}
-		  <a href="/spring01/"> 홈으로 돌아가기 </a>
 </body>
 </html>

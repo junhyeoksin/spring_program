@@ -15,4 +15,5 @@
 총점: ${dto.total} <br>
 평균: ${dto.average} <br>
 </body>
+ <a href="/spring01/"> 홈으로 돌아가기 </a>
 </html>

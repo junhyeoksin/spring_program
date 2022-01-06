@@ -11,6 +11,5 @@
  	<a href = "/spring01/ajax_table.do">구구단(ajax)</a>
  	<a href = "/spring01/member/list.do">회원관리</a>
  	
- 
  </div>
  

@@ -14,6 +14,7 @@
 영어 <input type = "text" name = "eng"><br>
 수학 <input type = "text" name = "mat"><br>
 <input type = "submit" value = "확인">
+<a href="spring01/">홈으로 </a>
 </form>
 </body>
 </html>
