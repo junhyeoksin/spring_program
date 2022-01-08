@@ -11,4 +11,6 @@
 상품명: ${map.dto.name}<br>
 가격: ${map.dto.price}
 </body>
+<br>
+<a href="/spring01/"> 홈으로 돌아가기</a>
 </html>
