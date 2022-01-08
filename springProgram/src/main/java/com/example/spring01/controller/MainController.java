@@ -117,6 +117,6 @@ public class MainController {
 			resultMsg ="아이디 또는 비밀번호가 틀렸습니다. ";
 		}
 		model.addAttribute("resultMsg", resultMsg);  //model 에저장
-		return "test/login_result";					//출력 페이지에 전송
+		return "test/login_result";					//출력 페이지에 전
 	}
 }
