@@ -112,6 +112,12 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
+		<!-- commons-fileupload 추가 -->
+		<dependency>
+		    <groupId>commons-fileupload</groupId>
+		    <artifactId>commons-fileupload</artifactId>
+		    <version>1.4</version>
+		</dependency>
 
 	</dependencies>
 	<build>

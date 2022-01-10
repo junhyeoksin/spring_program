@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mabatis.org//DTO Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.BoardMapper">
+	
+	
+	<select id="getList" resultType="org.zerock.domain.BoardVO">
+		select * from tbl_board order by bno desc
+	</select>
+	
+	
+	<insert id="insert">
+		insert into tbl_board (bno, title, content, writer)
+		 values (seq_board.nextval, #{title}, #{content}, #{writer})
+	 </insert><!-- 한번에 넣기 때문에 성능면에서는 좋다, 세팅해주는 부분이 없다.  -->
+	 
+	 <insert id="insertSelectKey"> 
+	 <!-- keyProperty 어디에 세팅할 것인지, resultType 은 소문자로 하면 풀네임을 사용x   -->
+	 <selectKey order="BEFORE" keyProperty="bno" resultType="long">
+	 		select seq_board.nextval from dual
+	 </selectKey>
+	 	insert into tbl_board (bno, title, content, writer)
+		 values (#{bno}, #{title}, #{content}, #{writer})
+	 </insert> <!-- 낭비될 수 있다. 그러나  키생성된 번호를 알아올수 있다. -->
+	 
+	 
+	 <!-- 등록 -->
+	 <select id="read" resultType="org.zerock.domain.BoardVO">
+	 	select * from tbl_board where bno = #{bno}
+	 </select>
+	 
+	 <!-- 삭제 -->
+	 <delete id="delete">
+	 	delete from tbl_board where bno = #{bno}
+	 </delete>
+	 
+	 <!-- 수정 -->
+	 <update id="update">
+	 	update tbl_board 
+	 	set title = #{title},
+	 	content= #{content},
+		writer = #{writer},
+		updatedate = sysdate
+		where bno = #{bno}
+	 </update>
+ </mapper>
